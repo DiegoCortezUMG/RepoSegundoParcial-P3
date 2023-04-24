@@ -5,7 +5,7 @@
  */
 package vista;
 
-import controlador.clsUsuario;
+import controlador.clsCliente;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author visitante
  */
-public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
+public class frmMantenimientoClientes extends javax.swing.JInternalFrame {
 
     public void llenadoDeCombos() {
         /*EmpleadoDAO empleadoDAO = new EmpleadoDAO();
@@ -28,37 +28,30 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
 
     public void llenadoDeTablas() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("ID");
-        modelo.addColumn("Nombre Usuario");
-        modelo.addColumn("Contraseña");
-        modelo.addColumn("Última sesión");
-        modelo.addColumn("Estatus");
-        modelo.addColumn("Nombre Real");
-        modelo.addColumn("Correo");
-        modelo.addColumn("Teléfono");
-        modelo.addColumn("Dirección");
-        modelo.addColumn("Tipo Usuario");
-        clsUsuario usuario = new clsUsuario();
+        modelo.addColumn("clId");
+        modelo.addColumn("clFecha");
+        modelo.addColumn("clNombre");
+        modelo.addColumn("clNit");
+        modelo.addColumn("clDebe");
+        modelo.addColumn("clHaber");
+
+        clsCliente cliente = new clsCliente();
         //VendedorDAO vendedorDAO = new VendedorDAO();
-        List<clsUsuario> listaUsuarios = usuario.getListadoUsuarios();
+        List<clsCliente> listaClientes = cliente.getListadoClientes();
         tablaUsuarios.setModel(modelo);
         String[] dato = new String[10];
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-            dato[0] = Integer.toString(listaUsuarios.get(i).getIdUsuario());
-            dato[1] = listaUsuarios.get(i).getNombreUsuario();
-            dato[2] = listaUsuarios.get(i).getContrasenaUsuario();
-            dato[3] = listaUsuarios.get(i).getUltimaSesionUsuario();
-            dato[4] = listaUsuarios.get(i).getEstatusUsuario();
-            dato[5] = listaUsuarios.get(i).getNombreRealUsuario();
-            dato[6] = listaUsuarios.get(i).getCorreoUsuario();
-            dato[7] = listaUsuarios.get(i).getTelefonoUsuario();
-            dato[8] = listaUsuarios.get(i).getDireccionUsuario();
-            dato[9] = Integer.toString(listaUsuarios.get(i).getTipoUsuario());
+        for (int i = 0; i < listaClientes.size(); i++) {
+            dato[0] = Integer.toString(listaClientes.get(i).getIdCliente());
+            dato[1] = listaClientes.get(i).getFechaCliente();
+            dato[2] = listaClientes.get(i).getNombreCliente();
+            dato[3] = listaClientes.get(i).getNitCliente();
+            dato[4] = Integer.toString(listaClientes.get(i).getDebeCliente());
+            dato[5] = Integer.toString(listaClientes.get(i).getHaberCliente());
             modelo.addRow(dato);
         }       
     }
 
-    public frmMantenimientoUsuario() {
+    public frmMantenimientoClientes() {
         initComponents();
         llenadoDeTablas();
         llenadoDeCombos();
@@ -98,12 +91,6 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         label8 = new javax.swing.JLabel();
         label9 = new javax.swing.JLabel();
         txtEstatus = new javax.swing.JTextField();
-        txtTelefono = new javax.swing.JTextField();
-        label10 = new javax.swing.JLabel();
-        label11 = new javax.swing.JLabel();
-        txtCorreo = new javax.swing.JTextField();
-        label13 = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JTextField();
 
         lb2.setForeground(new java.awt.Color(204, 204, 204));
         lb2.setText(".");
@@ -112,7 +99,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Mantenimiento Usuarios");
+        setTitle("Mantenimiento Cliente");
         setVisible(true);
 
         btnEliminar.setText("Eliminar");
@@ -147,7 +134,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         });
 
         label3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label3.setText("Nombre");
+        label3.setText("Fecha");
 
         txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
@@ -182,7 +169,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         txtContrasena.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         label5.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label5.setText("Contraseña");
+        label5.setText("Nombre");
 
         lb.setForeground(new java.awt.Color(204, 204, 204));
         lb.setText(".");
@@ -208,37 +195,19 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         txtUltimaSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         label6.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label6.setText("Ultima Sesion");
+        label6.setText("Nit");
 
         txtNombreReal.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtNombreReal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         label8.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label8.setText("Nombre Real");
+        label8.setText("Haber");
 
         label9.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label9.setText("Estatus");
+        label9.setText("Debe");
 
         txtEstatus.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtEstatus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
-
-        txtTelefono.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtTelefono.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
-
-        label10.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label10.setText("Telefono");
-
-        label11.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label11.setText("Correo");
-
-        txtCorreo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
-
-        label13.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label13.setText("Direccion");
-
-        txtDireccion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -255,12 +224,15 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
                             .addComponent(label3)
                             .addComponent(label5)
                             .addComponent(label6))
-                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUltimaSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtContrasena)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(txtUltimaSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,15 +242,6 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombreReal, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label11)
-                            .addComponent(label10))
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                            .addComponent(txtCorreo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -299,12 +262,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(14, 14, 14)
-                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(label13)
-                        .addGap(51, 51, 51)
-                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -325,7 +283,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnActualizar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lb)
                 .addGap(26, 26, 26)
@@ -348,19 +306,7 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label8)
                     .addComponent(txtNombreReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label11)
-                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label10)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label13)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnEliminar)
@@ -383,9 +329,9 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
         int registrosBorrados=0;
-        clsUsuario usuario = new clsUsuario();
-        usuario.setIdUsuario(Integer.parseInt(txtbuscado.getText()));
-        registrosBorrados=usuario.setBorrarUsuario(usuario);
+        clsCliente cliente = new clsCliente();
+        cliente.setIdCliente(Integer.parseInt(txtbuscado.getText()));
+        registrosBorrados=cliente.setBorrarCliente(cliente);
         JOptionPane.showMessageDialog(null, "Registro Borrado\n", 
                     "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);
         llenadoDeTablas();
@@ -393,16 +339,13 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        clsUsuario usuario = new clsUsuario();
-        usuario.setNombreUsuario(txtNombre.getText());
-        usuario.setContrasenaUsuario(txtContrasena.getText());
-        usuario.setUltimaSesionUsuario(txtUltimaSesion.getText());
-        usuario.setEstatusUsuario(txtEstatus.getText());
-        usuario.setNombreRealUsuario(txtNombreReal.getText());
-        usuario.setCorreoUsuario(txtCorreo.getText());
-        usuario.setTelefonoUsuario(txtTelefono.getText());
-        usuario.setDireccionUsuario(txtDireccion.getText());
-        usuario.setIngresarUsuario(usuario);
+        clsCliente usuario = new clsCliente();
+        usuario.setFechaCliente(txtNombre.getText());
+        usuario.setNombreCliente(txtContrasena.getText());
+        usuario.setNitCliente(txtUltimaSesion.getText());
+        usuario.setDebeCliente(Integer.parseInt((txtEstatus.getText())));
+        usuario.setHaberCliente(Integer.parseInt((txtEstatus.getText())));
+        
         JOptionPane.showMessageDialog(null, "Registro Ingresado\n", 
                     "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);
         llenadoDeTablas();
@@ -411,34 +354,28 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
             // TODO add your handling code here:
-        clsUsuario usuario = new clsUsuario();
+        clsCliente cliente = new clsCliente();
         //usuario.setNombreUsuario(txtbuscado.getText());        
-        usuario.setIdUsuario(Integer.parseInt(txtbuscado.getText()));        
-        usuario = usuario.getBuscarInformacionUsuarioPorId(usuario);
-        System.out.println("Usuario retornado:" + usuario);        
-        txtNombre.setText(usuario.getNombreUsuario());
-        txtContrasena.setText(usuario.getContrasenaUsuario());
-        txtUltimaSesion.setText(usuario.getUltimaSesionUsuario());
-        txtEstatus.setText(usuario.getEstatusUsuario());
-        txtNombreReal.setText(usuario.getNombreRealUsuario());
-        txtCorreo.setText(usuario.getCorreoUsuario());
-        txtTelefono.setText(usuario.getTelefonoUsuario());
-        txtDireccion.setText(usuario.getDireccionUsuario());
+        cliente.setIdCliente(Integer.parseInt(txtbuscado.getText()));        
+        cliente = cliente.getBuscarInformacionClientePorId(cliente);
+        System.out.println("Usuario retornado:" + cliente);        
+        txtNombre.setText(cliente.getNombreCliente());
+        txtContrasena.setText(cliente.getFechaCliente());
+        txtUltimaSesion.setText(cliente.getNitCliente());
+        txtEstatus.setText(Integer.toString(cliente.getDebeCliente()));
+        txtNombreReal.setText(Integer.toString(cliente.getHaberCliente()));
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
 //        // TODO add your handling code here:
-        clsUsuario usuario = new clsUsuario();
-        usuario.setIdUsuario(Integer.parseInt(txtbuscado.getText()));
-        usuario.setNombreUsuario(txtNombre.getText());
-        usuario.setContrasenaUsuario(txtContrasena.getText());
-        usuario.setUltimaSesionUsuario(txtUltimaSesion.getText());
-        usuario.setEstatusUsuario(txtEstatus.getText());
-        usuario.setNombreRealUsuario(txtNombreReal.getText());
-        usuario.setCorreoUsuario(txtCorreo.getText());
-        usuario.setTelefonoUsuario(txtTelefono.getText());
-        usuario.setDireccionUsuario(txtDireccion.getText());
-        usuario.setModificarUsuario(usuario);
+        clsCliente cliente = new clsCliente();
+        cliente.setIdCliente(Integer.parseInt(txtbuscado.getText()));
+        cliente.setFechaCliente(txtNombre.getText());
+        cliente.setNombreCliente(txtContrasena.getText());
+        cliente.setNitCliente(txtUltimaSesion.getText());
+        cliente.setDebeCliente(Integer.parseInt(txtEstatus.getText()));
+        cliente.setHaberCliente(Integer.parseInt(txtNombreReal.getText()));
+        cliente.setModificarCliente(cliente);
         JOptionPane.showMessageDialog(null, "Registro Modificado\n", 
                     "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);        
         llenadoDeTablas();
@@ -458,9 +395,6 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
         txtUltimaSesion.setText("");
         txtEstatus.setText("");
         txtNombreReal.setText("");
-        txtCorreo.setText("");
-        txtTelefono.setText("");
-        txtDireccion.setText("");
     }
     public void habilitarBotones()
     {
@@ -508,9 +442,6 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label1;
-    private javax.swing.JLabel label10;
-    private javax.swing.JLabel label11;
-    private javax.swing.JLabel label13;
     private javax.swing.JLabel label3;
     private javax.swing.JLabel label4;
     private javax.swing.JLabel label5;
@@ -522,12 +453,9 @@ public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbusu;
     private javax.swing.JTable tablaUsuarios;
     private javax.swing.JTextField txtContrasena;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEstatus;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombreReal;
-    private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtUltimaSesion;
     private javax.swing.JTextField txtbuscado;
     // End of variables declaration//GEN-END:variables

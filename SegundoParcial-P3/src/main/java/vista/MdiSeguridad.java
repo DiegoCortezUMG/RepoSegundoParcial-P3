@@ -241,38 +241,42 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void mantenimientoAplicacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoAplicacionesActionPerformed
         // TODO add your handling code here:
-        frmMantenimientoAplicacion ventana = new frmMantenimientoAplicacion();
+        /*frmMantenimientoAplicacion ventana = new frmMantenimientoAplicacion();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
     }//GEN-LAST:event_mantenimientoAplicacionesActionPerformed
 
     private void mantenimientoModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoModulosActionPerformed
         // TODO add your handling code here:
-        frmMantenimientoModulos ventana = new frmMantenimientoModulos();
+   /*     frmMantenimientoModulos ventana = new frmMantenimientoModulos();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
     }//GEN-LAST:event_mantenimientoModulosActionPerformed
 
     private void mantenimientoPerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoPerfilesActionPerformed
         // TODO add your handling code here:
-        frmMantenimientoPerfil ventana = new frmMantenimientoPerfil();
+        /*frmMantenimientoPerfil ventana = new frmMantenimientoPerfil();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);        
+        */
     }//GEN-LAST:event_mantenimientoPerfilesActionPerformed
 
     private void mantenimientoTipoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoTipoUsuariosActionPerformed
         // TODO add your handling code here:
-        frmMantenimientoTipoUsuario ventana = new frmMantenimientoTipoUsuario();
+        /*frmMantenimientoTipoUsuario ventana = new frmMantenimientoTipoUsuario();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
     }//GEN-LAST:event_mantenimientoTipoUsuariosActionPerformed
 
     private void mnuConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuConsultasActionPerformed
@@ -281,20 +285,22 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void consultaBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaBitacoraActionPerformed
         // TODO add your handling code here:
-        frmMantenimientoBitacora ventana = new frmMantenimientoBitacora();
+        /*frmMantenimientoBitacora ventana = new frmMantenimientoBitacora();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
     }//GEN-LAST:event_consultaBitacoraActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        frmProcesoAplicacionPerfil ventana = new frmProcesoAplicacionPerfil();
+        /*frmProcesoAplicacionPerfil ventana = new frmProcesoAplicacionPerfil();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**

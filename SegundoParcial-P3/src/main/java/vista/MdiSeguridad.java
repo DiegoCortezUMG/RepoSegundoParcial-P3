@@ -40,16 +40,15 @@ public class MdiSeguridad extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         mnuGeneral = new javax.swing.JMenuBar();
         mnuArchivo = new javax.swing.JMenu();
         mnuSalirSistema = new javax.swing.JCheckBoxMenuItem();
         mnuCatalogos = new javax.swing.JMenu();
         mnuCatalogosMantenimientos = new javax.swing.JMenu();
         mantenimientoUsuarios = new javax.swing.JMenuItem();
-        mantenimientoAplicaciones = new javax.swing.JCheckBoxMenuItem();
-        mantenimientoModulos = new javax.swing.JCheckBoxMenuItem();
-        mantenimientoPerfiles = new javax.swing.JCheckBoxMenuItem();
-        mantenimientoTipoUsuarios = new javax.swing.JCheckBoxMenuItem();
+        mantenimientoClientes = new javax.swing.JCheckBoxMenuItem();
+        mantenimientoBitacora = new javax.swing.JCheckBoxMenuItem();
         mnuProcesos = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         mnuConsultas = new javax.swing.JMenu();
@@ -70,15 +69,25 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("Por: Luis Diego Cortez Mérida, 9959-20-7425");
+
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         mnuArchivo.setText("Archivo");
@@ -116,41 +125,23 @@ public class MdiSeguridad extends javax.swing.JFrame {
         });
         mnuCatalogosMantenimientos.add(mantenimientoUsuarios);
 
-        mantenimientoAplicaciones.setSelected(true);
-        mantenimientoAplicaciones.setText("Mantenimiento Aplicaciones");
-        mantenimientoAplicaciones.addActionListener(new java.awt.event.ActionListener() {
+        mantenimientoClientes.setSelected(true);
+        mantenimientoClientes.setText("Mantenimiento Clientes");
+        mantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoAplicacionesActionPerformed(evt);
+                mantenimientoClientesActionPerformed(evt);
             }
         });
-        mnuCatalogosMantenimientos.add(mantenimientoAplicaciones);
+        mnuCatalogosMantenimientos.add(mantenimientoClientes);
 
-        mantenimientoModulos.setSelected(true);
-        mantenimientoModulos.setText("Mantenimiento Modulos");
-        mantenimientoModulos.addActionListener(new java.awt.event.ActionListener() {
+        mantenimientoBitacora.setSelected(true);
+        mantenimientoBitacora.setText("Mantenimiento Bitácora");
+        mantenimientoBitacora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoModulosActionPerformed(evt);
+                mantenimientoBitacoraActionPerformed(evt);
             }
         });
-        mnuCatalogosMantenimientos.add(mantenimientoModulos);
-
-        mantenimientoPerfiles.setSelected(true);
-        mantenimientoPerfiles.setText("Mantenimiento Perfiles");
-        mantenimientoPerfiles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoPerfilesActionPerformed(evt);
-            }
-        });
-        mnuCatalogosMantenimientos.add(mantenimientoPerfiles);
-
-        mantenimientoTipoUsuarios.setSelected(true);
-        mantenimientoTipoUsuarios.setText("Mantenimiento Tipo de Usuarios");
-        mantenimientoTipoUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoTipoUsuariosActionPerformed(evt);
-            }
-        });
-        mnuCatalogosMantenimientos.add(mantenimientoTipoUsuarios);
+        mnuCatalogosMantenimientos.add(mantenimientoBitacora);
 
         mnuCatalogos.add(mnuCatalogosMantenimientos);
 
@@ -213,15 +204,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     }//GEN-LAST:event_mnuCatalogosMantenimientosActionPerformed
 
-    private void mantenimientoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoUsuariosActionPerformed
-        // TODO add your handling code here:
-        frmMantenimientoUsuario ventana = new frmMantenimientoUsuario();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-    }//GEN-LAST:event_mantenimientoUsuariosActionPerformed
-
     private void mnuArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArchivoActionPerformed
         // TODO add your handling code here:
 
@@ -238,46 +220,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
             this.dispose();
         }        
     }//GEN-LAST:event_mnuSalirSistemaActionPerformed
-
-    private void mantenimientoAplicacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoAplicacionesActionPerformed
-        // TODO add your handling code here:
-        /*frmMantenimientoAplicacion ventana = new frmMantenimientoAplicacion();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-        */
-    }//GEN-LAST:event_mantenimientoAplicacionesActionPerformed
-
-    private void mantenimientoModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoModulosActionPerformed
-        // TODO add your handling code here:
-   /*     frmMantenimientoModulos ventana = new frmMantenimientoModulos();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-        */
-    }//GEN-LAST:event_mantenimientoModulosActionPerformed
-
-    private void mantenimientoPerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoPerfilesActionPerformed
-        // TODO add your handling code here:
-        /*frmMantenimientoPerfil ventana = new frmMantenimientoPerfil();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);        
-        */
-    }//GEN-LAST:event_mantenimientoPerfilesActionPerformed
-
-    private void mantenimientoTipoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoTipoUsuariosActionPerformed
-        // TODO add your handling code here:
-        /*frmMantenimientoTipoUsuario ventana = new frmMantenimientoTipoUsuario();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-        */
-    }//GEN-LAST:event_mantenimientoTipoUsuariosActionPerformed
 
     private void mnuConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuConsultasActionPerformed
         // TODO add your handling code here:
@@ -302,6 +244,34 @@ public class MdiSeguridad extends javax.swing.JFrame {
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
         */
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void mantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoClientesActionPerformed
+        // TODO add your handling code here:
+        frmMantenimientoClientes ventana = new frmMantenimientoClientes();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+    }//GEN-LAST:event_mantenimientoClientesActionPerformed
+
+    private void mantenimientoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoUsuariosActionPerformed
+        // TODO add your handling code here:
+        frmMantenimientoUsuario ventana = new frmMantenimientoUsuario();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+    }//GEN-LAST:event_mantenimientoUsuariosActionPerformed
+
+    private void mantenimientoBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoBitacoraActionPerformed
+        // TODO add your handling code here:
+        /*     frmMantenimientoModulos ventana = new frmMantenimientoModulos();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        */
+    }//GEN-LAST:event_mantenimientoBitacoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,15 +319,14 @@ public class MdiSeguridad extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem consultaBitacora;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public static javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JCheckBoxMenuItem mantenimientoAplicaciones;
-    private javax.swing.JCheckBoxMenuItem mantenimientoModulos;
-    private javax.swing.JCheckBoxMenuItem mantenimientoPerfiles;
-    private javax.swing.JCheckBoxMenuItem mantenimientoTipoUsuarios;
+    private javax.swing.JCheckBoxMenuItem mantenimientoBitacora;
+    private javax.swing.JCheckBoxMenuItem mantenimientoClientes;
     private javax.swing.JMenuItem mantenimientoUsuarios;
     private javax.swing.JMenu mnuArchivo;
     private javax.swing.JMenu mnuAyudas;

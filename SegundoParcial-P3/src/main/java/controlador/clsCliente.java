@@ -71,7 +71,6 @@ public class clsCliente {
     public void setDebeCliente(int DebeCliente) {
         this.DebeCliente = DebeCliente;
     }
-
     public int getHaberCliente() {
         return HaberCliente;
     }

@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class daoCliente {
 
-    private static final String SQL_SELECT = "SELECT aplid, aplnombre, aplestatus FROM tbl_aplicacion";
-    private static final String SQL_INSERT = "INSERT INTO tbl_aplicacion(aplnombre, aplestatus) VALUES(?, ?)";
-    private static final String SQL_UPDATE = "UPDATE tbl_aplicacion SET aplnombre=?, aplestatus=? WHERE aplid = ?";
-    private static final String SQL_DELETE = "DELETE FROM tbl_aplicacion WHERE aplid=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT aplid, aplnombre, aplestatus FROM tbl_aplicacion WHERE aplnombre = ?";
-    private static final String SQL_SELECT_ID = "SELECT aplid, aplnombre, aplestatus FROM tbl_aplicacion WHERE aplid = ?";    
+    private static final String SQL_SELECT = "SELECT clId, clFecha, clNombre, clNit, clDebe, clHaber FROM tbl_cliente";
+    private static final String SQL_INSERT = "INSERT INTO tbl_cliente(clFecha, clNombre, clNit, clDebe, clHaber) VALUES(?,?,?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_cliente SET clId=?, clFecha=?, clNombre=?, clNit=?, clDebe=?, clHaber=? WHERE clId = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_cliente WHERE clId=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT clId, clFecha, clNombre, clNit, clDebe, clHaber FROM tbl_cliente WHERE clNombre = ?";
+    private static final String SQL_SELECT_ID = "SELECT clId, clFecha, clNombre, clNit, clDebe, clHaber FROM tbl_aplicacion WHERE clId = ?";    
 
     public List<clsCliente> consultaCliente() {
         Connection conn = null;

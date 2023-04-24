@@ -343,8 +343,8 @@ public class frmMantenimientoClientes extends javax.swing.JInternalFrame {
         usuario.setFechaCliente(txtNombre.getText());
         usuario.setNombreCliente(txtContrasena.getText());
         usuario.setNitCliente(txtUltimaSesion.getText());
-        usuario.setDebeCliente(Integer.toString((txtEstatus.getText())));
-        usuario.setHaberCliente(Integer.toString((txtEstatus.getText())));
+        usuario.setDebeCliente(Integer.parseInt((txtEstatus.getText())));
+        usuario.setHaberCliente(Integer.parseInt((txtEstatus.getText())));
         
         JOptionPane.showMessageDialog(null, "Registro Ingresado\n", 
                     "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);

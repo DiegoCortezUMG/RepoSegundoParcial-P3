@@ -265,12 +265,11 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void mantenimientoBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoBitacoraActionPerformed
         // TODO add your handling code here:
-        /*     frmMantenimientoModulos ventana = new frmMantenimientoModulos();
+        frmMantenimientoBitacora ventana = new frmMantenimientoBitacora();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-        */
     }//GEN-LAST:event_mantenimientoBitacoraActionPerformed
 
     /**
